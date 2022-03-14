@@ -1,0 +1,347 @@
+﻿<!--
+/*
+ * Author               : Quaint Park
+ * Copyright            : © 2018 Quaint Park.
+ * Official Website     : www.quaintpark.com
+ * ------------------------------------------------------------------------------
+ * Description          : Quaint Study Abroad Management System (QSAMS)
+*/
+-->
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="QuaintSAMS.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="author" content="Quaint Park" />
+    <meta name="description" content="Quaint SAMS is a web based study abroad management system. It includes university ranking, bank loan information, course information, institute information, blog, membership and administrator panel. Informative about abroad study." />
+    <meta name="keywords" content="quaintsams, web, study, abroad, management software, c#, asp.net, quaint park" />
+
+    <title>
+        <asp:Literal Text="Higher Study Guideline" runat="server" />
+        <asp:ContentPlaceHolder ID="titleContentPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+    </title>
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="icon" type="image/png" href="Theme/img/favicon.png" />
+    <link rel="apple-touch-icon" href="Theme/img/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="Theme/img/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="Theme/img/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="Theme/img/apple-touch-icon-144x144.png" />
+
+    <%-- CSS --%>
+    <link rel="stylesheet" href="Theme/css/normalize.css" />
+    <link rel="stylesheet" href="Theme/css/main.css" />
+    <link rel="stylesheet" href="Theme/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="Theme/css/animate.min.css" />
+    <link rel="stylesheet" href="Theme/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="Theme/lib/OwlCarousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="Theme/lib/OwlCarousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="Theme/css/meanmenu.min.css" />
+    <link rel="stylesheet" href="Theme/lib/slider/css/nivo-slider.css" type="text/css" />
+    <link rel="stylesheet" href="Theme/lib/slider/css/preview.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="Theme/css/jquery.datetimepicker.css" />
+    <link rel="stylesheet" href="Theme/css/magnific-popup.css" />
+    <link rel="stylesheet" href="Theme/css/hover-min.css" />
+    <link rel="stylesheet" href="Theme/css/reImageGrid.css" />
+    <link rel="stylesheet" href="Theme/css/style.css" />
+    <link rel="stylesheet" href="Theme/css/CustomCss.css" />
+    <asp:ContentPlaceHolder ID="headContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="Theme/js/modernizr-2.8.3.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <!-- Preloader Start Here -->
+        <%--<div id="preloader"></div>--%>
+        <!-- Preloader End Here -->
+
+        <!-- Main Body Area Start Here -->
+        <div id="wrapper">
+
+            <!-- Header Area Start Here -->
+            <header>
+
+                <%-- Top Header area Start Here --%>
+                <div id="header2" class="header2-area">
+                    <div class="header-top-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="header-top-left">
+                                        <ul>
+                                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="#">+XXX XXXX XXX XXX</a></li>
+                                            <li><i class="fa fa-envelope" aria-hidden="true"></i><a href="mailto:info@hsg.com">info@hsg.com</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                    <div class="header-top-right">
+                                        <ul runat="server" id="areaAccess">
+                                            <li>
+                                                <a runat="server" class="login-btn-area" href="~/Login.aspx?Ref=member" id="btnLogin"><i class="fa fa-lock" aria-hidden="true"></i>Login</a>
+                                            </li>
+                                            <li>
+                                                <a runat="server" class="login-btn-area" href="~/Register.aspx" id="btnRegister"><i class="fa fa-user" aria-hidden="true"></i>Register</a>
+                                            </li>
+                                        </ul>
+                                        <ul runat="server" id="areaUserInfo" visible="false">                                            
+                                            <li>
+                                                <i class="fa fa-user"></i>
+                                                <asp:Label ID="lblUserName" runat="server" Text="User Name"></asp:Label>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-sign-out"></i>
+                                                <a runat="server" href="~/Login.aspx?Ref=logout" id="btnLogout">Logout</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%-- Main Menu Start Here --%>
+                    <div class="main-menu-area bg-textPrimary" id="sticker">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-3">
+                                    <div class="logo-area">
+                                        <a runat="server" href="~/Default.aspx">
+                                            <img runat="server" class="img-responsive" src="~/Theme/img/logo.png" alt="logo" /></a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-9">
+                                    <nav id="desktop-nav">
+                                        <nav id="desktop-nav">
+                                            <ul>
+                                                <li><a runat="server" href="Default.aspx">Home</a>
+                                                </li>
+                                                <li><a runat="server" href="~/Pages/AboutUs.aspx">About</a>
+                                                </li>
+                                                <li><a runat="server" href="~/Pages/Ranking.aspx">Ranking</a>
+                                                </li>
+                                                <li><a runat="server" href="~/Pages/BankLoan.aspx">Bank Loan</a>
+                                                </li>
+                                                <li><a runat="server" href="~/Pages/Training.aspx">Training</a>
+                                                    <%--<ul>
+                                                        <li><a href="#">GRE</a></li>
+                                                        <li><a href="#">GMAT</a></li>
+                                                        <li><a href="#">IELTS</a></li>
+                                                        <li><a href="#">TOFEL</a></li>
+                                                    </ul>--%>
+                                                </li>
+                                                <li><a runat="server" href="~/Pages/Tutorial.aspx">Tutorial</a>
+                                                </li>
+                                                <li><a runat="server" href="~/Pages/Blog.aspx">Blog</a>
+                                                </li>
+                                                <li><a runat="server" href="~/Pages/Contact.aspx">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </nav>
+                                </div>
+                                <%--<div class="col-lg-1 col-md-1 hidden-sm">
+                            <div class="header-search">
+                                <form>
+                                    <input type="text" class="search-form" placeholder="Search...." required="">
+                                    <a href="#" class="search-button" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                </form>
+                            </div>
+                        </div>--%>
+                            </div>
+                        </div>
+                    </div>
+                    <%-- Main Menu End Here --%>
+                </div>
+                <%-- Top Header area End Here --%>
+
+                <!-- Mobile Menu Area Start -->
+                <div class="mobile-menu-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mobile-menu">
+                                    <nav id="dropdown">
+                                        <ul>
+                                            <li><a runat="server" href="Default.aspx">Home</a>
+                                            </li>
+                                            <li><a runat="server" href="~/Pages/AboutUs.aspx">About</a>
+                                            </li>
+                                            <li><a runat="server" href="~/Pages/Ranking.aspx">Ranking</a>
+                                            </li>
+                                            <li><a runat="server" href="~/Pages/BankLoan.aspx">Bank Loan</a>
+                                            </li>
+                                            <li><a runat="server" href="~/Pages/Training.aspx">Training</a>
+                                                <%--<ul class="mega-menu-area">
+                                                    <li>
+                                                        <a href="#">British Council</a>
+                                                        <a href="#">St John's Tutorial</a>
+                                                        <a href="#">GRE Center</a>
+                                                        <a href="#">Mentors</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#">Pentason</a>
+                                                        <a href="#">IELTS Center</a>
+                                                        <a href="#">Americam Center</a>
+                                                        <a href="#">Band 7 IELTS</a>
+                                                    </li>
+                                                </ul>--%>
+                                            </li>
+                                            <li><a runat="server" href="~/Pages/Tutorial.aspx">Tutorial</a>
+                                            </li>
+                                            <li><a runat="server" href="~/Pages/Blog.aspx">Blog</a>
+                                            </li>
+                                            <li><a runat="server" href="~/Pages/Contact.aspx">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Area End -->
+            </header>
+            <!-- Header Area End Here -->
+
+            <%-- Page Content --%>
+            <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+
+            <!-- Footer Area Start Here -->
+            <footer>
+                <div class="footer-area-top">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="footer-box">
+                                    <a href="index.html">
+                                        <img class="img-responsive" runat="server" src="~/Theme/img/logo.png" alt="logo" /></a>
+                                    <div class="footer-about">
+                                        <p>Praesent vel rutrum purus. Nam vel dui eu sus duis dignissim dignissim. Suspenetey disse at ros tecongueconsequat.Fusce sit amet rna feugiat.</p>
+                                    </div>
+                                    <ul class="footer-social">
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="footer-box">
+                                    <h3>Site Map</h3>
+                                    <ul class="featured-links">
+                                        <li>
+                                            <ul>
+                                                <li><a runat="server" href="Default.aspx">Home</a></li>
+                                                <li><a runat="server" href="~/Pages/AboutUs.aspx">About Us</a></li>
+                                                <li><a runat="server" href="~/Pages/Ranking.aspx">Ranking</a></li>
+                                                <li><a runat="server" href="~/Pages/BankLoan.aspx">Bank Loan</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul>
+                                                <li><a runat="server" href="~/Pages/Training.aspx">Training</a></li>
+                                                <li><a runat="server" href="~/Pages/HelpAndTips.aspx">Help &amp; Tips</a></li>
+                                                <li><a runat="server" href="~/Pages/Contact.aspx">Contact</a></li>
+                                                <li><a runat="server" href="~/Login.aspx?Ref=admin">Admin Login</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="footer-box">
+                                    <h3>Information</h3>
+                                    <ul class="corporate-address">
+                                        <li><i class="fa fa-phone" aria-hidden="true"></i>+XXX XXXX XXX XXX</li>
+                                        <li><i class="fa fa-envelope-o" aria-hidden="true"></i>info@hsg.com</li>
+                                        <li><i class="fa fa-map-marker"></i>Dhaka, Bangladesh</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                <div class="footer-box">
+                                    <h3>Map</h3>
+                                    <iframe runat="server" id="mapSection" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7496149.559281854!2d85.84647510143783!3d23.45219283693556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30adaaed80e18ba7%3A0xf2d28e0c4e1fc6b!2sBangladesh!5e0!3m2!1sen!2sbd!4v1516641930341" marginwidth="0" width="100%" scrolling="no" height="250" marginheight="0" style="border: 0" allowfullscreen="" frameborder="0"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-area-bottom">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p class="text-center"><% Response.Write(QuaintSAMS.Code.Global.Core.Copyright(true)); %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer Area End Here -->
+
+        </div>
+        <!-- Main Body Area End Here -->
+
+    </form>
+
+    <%-- JS --%>
+    <script src="Theme/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <script src="Theme/js/plugins.js" type="text/javascript"></script>
+    <script src="Theme/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="Theme/js/wow.min.js"></script>
+    <script src="Theme/lib/slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
+    <script src="Theme/lib/slider/home.js" type="text/javascript"></script>
+    <script src="Theme/lib/OwlCarousel/owl.carousel.min.js" type="text/javascript"></script>
+    <script src="Theme/js/jquery.meanmenu.min.js" type="text/javascript"></script>
+    <script src="Theme/js/jquery.scrollUp.min.js" type="text/javascript"></script>
+    <script src="Theme/js/jquery.counterup.min.js"></script>
+    <script src="Theme/js/waypoints.min.js"></script>
+    <script src="Theme/js/jquery.countdown.min.js" type="text/javascript"></script>
+    <script src="Theme/js/isotope.pkgd.min.js" type="text/javascript"></script>
+    <script src="Theme/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
+    <script src="Theme/js/jquery.gridrotator.js" type="text/javascript"></script>
+    <script src="Theme/js/main.js" type="text/javascript"></script>
+
+    <%-- Resolver Start Here --%>
+    <%--<script type="text/javascript" src='<%= ResolveUrl("~Theme/js/jquery-2.2.4.min.js") %>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/js/plugins.js") %>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/js/bootstrap.min.js")%>'></script>
+    <script src='<%= ResolveUrl("~Theme/js/wow.min.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/lib/slider/js/jquery.nivo.slider.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/lib/slider/home.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/lib/OwlCarousel/owl.carousel.min.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/js/jquery.meanmenu.min.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/js/jquery.scrollUp.min.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/js/jquery.counterup.min.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/js/waypoints.min.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/js/jquery.countdown.min.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/js/isotope.pkgd.min.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/js/jquery.magnific-popup.min.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/js/jquery.gridrotator.js")%>'></script>
+    <script type="text/javascript" src='<%= ResolveUrl("~Theme/js/main.js")%>'></script>--%>
+    <%-- Resolver End Here --%>
+
+    <asp:ContentPlaceHolder ID="footerContentPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</body>
+</html>

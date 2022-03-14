@@ -1,0 +1,132 @@
+﻿.bg-textPrimary {
+    background: #002147;
+}
+
+.header2-area nav#desktop-nav > ul > li > a {
+    color: white;
+}
+
+.header2-area .header-top-area {
+    background: #EFC939;
+}
+
+    .header2-area .header-top-area .header-top-left ul li a,
+    .header2-area .header-top-area .header-top-left ul li i,
+    .header2-area .header-top-area .header-top-left ul li a i,
+    .header2-area .header-top-area .header-top-right ul li a,
+    .header2-area .header-top-area .header-top-right ul li i,
+    .header2-area .header-top-area .header-top-right ul li a i {
+        color: #002147 !important;
+    }
+
+nav#desktop-nav ul li .mega-menu-area {
+    width: 380px;
+}
+
+.header2-area .stick {
+    background: #002147;
+}
+
+.news-event-area {
+    padding: 88px 0 50px;
+}
+
+h2.page-title:before {
+    content: "";
+    height: 3px;
+    width: 40px;
+    position: absolute;
+    bottom: 30px;
+    z-index: 1;
+    background: #fdc800;
+}
+
+.event-inner-area .event-wrapper > li .event-calender-wrapper {
+    flex: 0.7;
+}
+
+.event-inner-area .event-wrapper > li .event-calender-wrapper.section-blog {
+    flex: 0.5;
+}
+
+.contact-us-page1-area {
+    margin-bottom: 90px;
+}
+
+.ri-grid ul.ri-grid-list li a {
+    position: relative;
+    width: 98px;
+    height: 97px;
+}
+
+.ri-grid ul.ri-grid-list {
+    width: 101%;
+}
+
+.courses-box1 .single-item-wrapper .courses-content-wrapper .item-title {
+    padding: 0;
+}
+
+.header2-area .header-top-area .header-top-right {
+    margin: 7px 0;
+}
+
+.header2-area .header-top-area .header-top-right ul li {
+    border-right: 1px solid #bdbdbd;
+    padding-right: 10px;
+}
+
+.header2-area .header-top-area .header-top-right ul li:last-child {
+    border-right:0;
+}
+
+.header2-area .header-top-area .header-top-right ul li .login-btn-area {
+    padding: 0;
+}
+
+.content-page {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.content-page-section {
+    margin: 20px 0;
+}
+
+table.content-page-table thead tr th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+table.content-page-table tbody tr td {
+    vertical-align: middle;
+}
+
+table.content-page-table tbody tr td i {
+    padding-right: 5px;
+}
+
+table.content-page-table thead tr {
+    background-color: #EFC939;
+}
+
+table.content-page-table tbody tr:nth-of-type(odd) {
+    background-color: #EFC939;
+    opacity: 0.6;
+    filter: alpha(opacity = 60);
+    color: #012;
+}
+
+.event-content-holder ul li i {
+    padding-right: 5px;
+}
+
+.title-default-left-bold-lowhight {
+    text-transform: unset;
+}
+
+.img-avater {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+

@@ -1,0 +1,6 @@
+D:\JK Drive\Work Space\Quaint Study Abroad Management System (QSAMS)\QuaintSAMS\QuaintSAMS\bin\QuaintSAMS.dll.config
+D:\JK Drive\Work Space\Quaint Study Abroad Management System (QSAMS)\QuaintSAMS\QuaintSAMS\bin\QuaintSAMS.dll
+D:\JK Drive\Work Space\Quaint Study Abroad Management System (QSAMS)\QuaintSAMS\QuaintSAMS\bin\QuaintSAMS.pdb
+D:\JK Drive\Work Space\Quaint Study Abroad Management System (QSAMS)\QuaintSAMS\QuaintSAMS\bin\QuaintPark.dll
+D:\JK Drive\Work Space\Quaint Study Abroad Management System (QSAMS)\QuaintSAMS\QuaintSAMS\obj\Release\QuaintSAMS.dll
+D:\JK Drive\Work Space\Quaint Study Abroad Management System (QSAMS)\QuaintSAMS\QuaintSAMS\obj\Release\QuaintSAMS.pdb
